@@ -3,172 +3,473 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manaswini | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <title>Maddirala Sai Sudha Manaswini | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <style>
+      :root {
+        --bg-color: #0b0f19;
+        --card-bg: #111827;
+        --accent-color: #00f2fe;
+        --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --border-color: #1f2937;
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
-        font-family: 'Montserrat', sans-serif;
-        background: url('https://source.unsplash.com/1600x900/?technology,code') no-repeat center center fixed;
-        background-size: cover;
-        color: #fff;
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-primary);
         line-height: 1.6;
       }
+
+      /* Navigation */
       header {
-        background: rgba(0, 0, 0, 0.75);
-        padding: 2rem;
-        text-align: center;
+        position: sticky;
+        top: 0;
+        background: rgba(11, 15, 25, 0.85);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid var(--border-color);
       }
-      header h1 {
-        font-size: 2.5rem;
-        color: #66fcf1;
+
+      .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 2rem;
       }
+
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: #00f2fe;
+      }
+
       nav a {
-        margin: 0 1rem;
-        color: #66fcf1;
+        margin-left: 1.5rem;
+        color: var(--text-secondary);
         text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
       }
-      .resume-button-header {
-        display: inline-block;
-        background-color: #66fcf1;
+
+      nav a:hover {
+        color: var(--accent-color);
+      }
+
+      .btn-resume {
+        background: var(--accent-gradient);
         color: #000;
-        padding: 8px 15px;
-        border-radius: 5px;
+        padding: 0.5rem 1.2rem;
+        border-radius: 6px;
+        font-weight: 600;
         text-decoration: none;
-        margin-top: 10px;
-        font-weight: bold;
+        transition: opacity 0.3s ease;
       }
-      section {
-        background: rgba(0, 0, 0, 0.75);
+
+      .btn-resume:hover {
+        opacity: 0.9;
+      }
+
+      /* Layout */
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
         padding: 2rem;
-        max-width: 900px;
-        margin: 2rem auto;
-        border-radius: 10px;
       }
+
+      section {
+        margin-bottom: 4rem;
+      }
+
       h2 {
-        border-bottom: 2px solid #66fcf1;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-        color: #66fcf1;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-primary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
-      ul {
-        list-style: none;
+
+      h2::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border-color);
+        margin-left: 1rem;
       }
-      a {
-        color: #66fcf1;
+
+      /* Hero Section */
+      .hero {
+        padding: 4rem 0 2rem 0;
       }
-      .project-card {
-        background-color: #1e1e1e;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 10px;
+
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
-      .project-card h3 {
-        color: #66fcf1;
+
+      .hero p.tagline {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
       }
-      .project-card img {
-        max-width: 100%;
-        border-radius: 8px;
-        margin-top: 10px;
-      }
-      .resume-button {
-        display: inline-block;
-        background-color: #66fcf1;
-        color: #000;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
         margin-top: 1rem;
       }
+
+      .social-links a {
+        color: var(--accent-color);
+        text-decoration: none;
+        background: rgba(0, 242, 254, 0.05);
+        border: 1px solid rgba(0, 242, 254, 0.2);
+        padding: 0.4rem 0.9rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: var(--accent-color);
+        color: #000;
+      }
+
+      /* Grid Cards */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 1.5rem;
+        border-radius: 12px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(0, 242, 254, 0.4);
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+        color: var(--text-primary);
+        margin-bottom: 0.3rem;
+      }
+
+      .card .sub-title {
+        font-size: 0.85rem;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+      }
+
+      .card ul {
+        list-style: none;
+      }
+
+      .card ul li {
+        position: relative;
+        padding-left: 1.2rem;
+        margin-bottom: 0.6rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+
+      .card ul li::before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+      }
+
+      /* Skills Section */
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .skill-group h3 {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+      }
+
+      /* Timeline Layout (Education) */
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .timeline-item {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 1.2rem 1.5rem;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .timeline-info h3 {
+        font-size: 1.1rem;
+        color: var(--text-primary);
+      }
+
+      .timeline-info p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .badge {
+        background: rgba(0, 242, 254, 0.1);
+        color: var(--accent-color);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      /* Footer */
       footer {
         text-align: center;
-        padding: 1rem;
-        background: rgba(0, 0, 0, 0.75);
-        margin-top: 2rem;
-        font-size: 0.9rem;
+        padding: 2rem;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 { font-size: 2.2rem; }
+        .nav-container { flex-direction: column; gap: 1rem; }
+        nav a { margin: 0 0.5rem; }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>Maddirala Sai Sudha Manaswini</h1>
-      <p>B.Tech in Computer Science (AI) | Passionate about AI, ML, and Cloud</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certs">Certifications</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <br />
-      <a href="https://drive.google.com/file/d/1giMYilXwtlav2ipKBwYTAe-vdZPcwwnc/view?usp=drive_link" class="resume-button-header" target="_blank"> Resume </a>
+      <div class="nav-container">
+        <a href="#" class="logo">Manaswini<span>.</span></a>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certs">Certifications</a>
+          <a href="#achievements">Achievements</a>
+        </nav>
+        <a href="https://drive.google.com/file/d/1giMYilXwtlav2ipKBwYTAe-vdZPcwwnc/view?usp=drive_link" class="btn-resume" target="_blank">Resume</a>
+      </div>
     </header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hi! I’m Manaswini, a B.Tech (CSE-AI) student — an enthusiastic and results-driven Computer Science student with a strong passion for developing high-quality software solutions. Experienced in applying data structures, algorithms, and problem-solving skills to build robust and scalable applications. Eager to grow as a developer and contribute to impactful projects in a collaborative environment.
-      </p>
-    </section>
+    <main class="container">
+      <!-- Hero / About -->
+      <section id="about" class="hero">
+        <h1>Maddirala Sai Sudha Manaswini</h1>
+        <p class="tagline">B.Tech CSE (AI) Student | Machine Learning, Data Analytics & Software Engineering</p>
+        <p style="color: var(--text-secondary); max-width: 750px;">
+          Enthusiastic and results-driven Computer Science student with a strong background in Machine Learning, NLP, and Data Analytics. Passionate about designing robust AI applications, scalable data pipelines, and optimized systems.
+        </p>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> Python, Java, R, SQL, HTML, CSS</li>
-        <li><strong>Frameworks:</strong> TensorFlow, Keras, PyTorch, NLTK</li>
-        <li><strong>Tools:</strong> Streamlit, Power BI, Git, VS Code, Excel</li>
-      </ul>
-    </section>
+        <div class="social-links">
+          <a href="mailto:manumaddirala@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/maddirala-sai-sudha-manaswini-7b1451259/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/ManaswiniMaddirala" target="_blank">GitHub</a>
+          <a href="https://leetcode.com/" target="_blank">LeetCode</a>
+          <a href="https://www.hackerrank.com/" target="_blank">HackerRank</a>
+        </div>
+      </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
+      <!-- Education Section -->
+      <section id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-info">
+              <h3>Bachelor of Technology — CSE (AI)</h3>
+              <p>Pragati Engineering College, Surampalem (Sep 2022 – Apr 2026)</p>
+            </div>
+            <span class="badge">CGPA: 8.84</span>
+          </div>
 
-      <div class="project-card">
-        <h3>AI Text Assessment Assistant <span style="font-weight:normal">(Feb – Apr 2024)</span></h3>
-        <ul>
-          <li>Developed an AI text assessment tool using Python, NLTK, and Streamlit, achieving 92% accuracy and reducing manual grading time significantly.</li>
-          <li>Designed a summarization component to handle long-form student responses, improving evaluation efficiency by 40%.</li>
-          <li>Built and deployed a Streamlit dashboard with real-time score updates and downloadable reports, refined through multiple test cycles with faculty and student data.</li>
-          <li><a href="https://github.com/ManaswiniMaddirala/AI-Text-Assessment-Assistant" target="_blank">View Project on GitHub</a></li>
-        </ul>
-      </div>
+          <div class="timeline-item">
+            <div class="timeline-info">
+              <h3>Intermediate (MPC)</h3>
+              <p>Aditya Junior College, Rajahmundry (Jun 2020 – May 2022)</p>
+            </div>
+            <span class="badge">93.8%</span>
+          </div>
 
-      <div class="project-card">
-        <h3>Power BI Dashboards <span style="font-weight:normal">(May 2025)</span></h3>
-        <ul>
-          <li>Created interactive dashboards in Power BI to demonstrate data visualization and analytics skills.</li>
-          <li><strong>Budget vs Actuals Dashboard:</strong> Tracks financial performance, visualizing budgeted vs actual amounts with variance calculations.</li>
-          <li><strong>Visual Analytics Dashboard:</strong> Utilizes COVID-19 datasets to demonstrate bookmarks, tooltips, and drillthrough for interactive analysis.</li>
-          <li><strong>Food Items Dashboard:</strong> Visualizes nutritional data of food items for dietary analysis and retail insights.</li>
-          <li>Focused on clean design, interactivity, and real-world data storytelling.</li>
-          <li><a href="https://github.com/ManaswiniMaddirala/PowerBI-Dashboard" target="_blank">View Project on GitHub</a></li>
-        </ul>
-      </div>
-    </section>
+          <div class="timeline-item">
+            <div class="timeline-info">
+              <h3>High School (SSC)</h3>
+              <p>Bhashyam Public School, Rajahmundry (Jun 2019 – Mar 2020)</p>
+            </div>
+            <span class="badge">99%</span>
+          </div>
+        </div>
+      </section>
 
-    <section id="certs">
-      <h2>Certifications</h2>
-      <ul>
-        <li>ServiceNow Certified System Administrator</li>
-        <li>ServiceNow Certified Application Developer</li>
-        <li>Database Management Systems – NPTEL</li>
-        <li>Java Programming Fundamentals – EdX</li>
-      </ul>
-    </section>
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-container">
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <div class="skill-tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">R</span>
+            </div>
+          </div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:manumaddirala@gmail.com">manumaddirala@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/maddirala-sai-sudha-manaswini-7b1451259/">Manaswini-Maddirala</a></p>
-      <p>GitHub: <a href="https://github.com/ManaswiniMaddirala">ManaswiniMaddirala</a></p>
-    </section>
+          <div class="skill-group">
+            <h3>AI / ML Frameworks</h3>
+            <div class="skill-tags">
+              <span class="tag">NLP</span>
+              <span class="tag">Librosa</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">PyMuPDF</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Developer Tools</h3>
+            <div class="skill-tags">
+              <span class="tag">Streamlit</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+          <!-- Dedupe ML -->
+          <div class="card">
+            <h3>Dedupe ML</h3>
+            <div class="sub-title">Dec 2025 – Apr 2026</div>
+            <ul>
+              <li>Built a multimodal deduplication system using Flask and LSH to detect duplicate content across text, PDF, audio, and image formats.</li>
+              <li>Implemented cross-format matching, storage optimization, and GitHub OAuth authentication with a secure user dashboard.</li>
+            </ul>
+          </div>
+
+          <!-- Power BI Dashboards -->
+          <div class="card">
+            <h3>Power BI Dashboards</h3>
+            <div class="sub-title">Apr – May 2025</div>
+            <ul>
+              <li>Built interactive dashboards tracking COVID-19 trends, financial budget vs. actuals, and nutritional caloric analysis.</li>
+              <li>Applied advanced data storytelling, tooltips, drillthroughs, and variance calculations to support strategic data insights.</li>
+              <li><a href="https://github.com/ManaswiniMaddirala/PowerBI-Dashboard" target="_blank" style="color: var(--accent-color);">View GitHub Repository</a></li>
+            </ul>
+          </div>
+
+          <!-- AI Text Assessment Assistant -->
+          <div class="card">
+            <h3>AI Text Assessment Assistant</h3>
+            <div class="sub-title">Feb – Apr 2024</div>
+            <ul>
+              <li>Developed an AI-powered evaluation tool using Python, NLP, and Streamlit to automate subjective essay/text grading.</li>
+              <li>Integrated a text summarization module for long responses, improving accuracy to 92% and cutting evaluation time by 40%.</li>
+              <li><a href="https://github.com/ManaswiniMaddirala/AI-Text-Assessment-Assistant" target="_blank" style="color: var(--accent-color);">View GitHub Repository</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications Section -->
+      <section id="certs">
+        <h2>Certifications</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>ServiceNow Certified System Administrator (CSA)</h3>
+            <div class="sub-title">Issued Mar 25, 2026</div>
+          </div>
+
+          <div class="card">
+            <h3>ServiceNow Certified Application Developer (CAD)</h3>
+            <div class="sub-title">Issued Mar 25, 2026</div>
+          </div>
+
+          <div class="card">
+            <h3>Database Management Systems</h3>
+            <div class="sub-title">NPTEL | Jul – Sep 2024</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Leadership & Achievements -->
+      <section id="achievements">
+        <h2>Leadership & Achievements</h2>
+        <div class="card">
+          <ul>
+            <li><strong>Hack Vega 2025 Finalist:</strong> Reached the final round after successfully navigating through two rigorous competitive stages.</li>
+            <li><strong>Academic Rank:</strong> Consistently ranked in the top 5 of the section, maintaining strong academic performance.</li>
+            <li><strong>Pragati Press Club:</strong> Authored 10+ event reviews and technical articles, enhancing team communication and writing skills.</li>
+            <li><strong>AI Nexus Fest:</strong> Led technical event planning and organization, driving student engagement and operational execution.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      <p>&copy; 2025 Maddirala Sai Sudha Manaswini. All rights reserved.</p>
+      <p>&copy; 2026 Maddirala Sai Sudha Manaswini. All rights reserved.</p>
     </footer>
   </body>
 </html>
